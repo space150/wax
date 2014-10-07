@@ -4,7 +4,12 @@ module Wax
 
     # Does this need a root_dir param?
     def initialize(page)
-      @page = page
+      @name = page.first
+      @modules = page.last
+    end
+
+    def url
+      @name.downcase
     end
 
     def render_with(renderer)

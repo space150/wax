@@ -5,12 +5,18 @@ require "minitest/autorun"
 require "wax/page"
 
 describe Wax::Page do
+  before do
+    @page = Wax::Page.new ["Home", {"hero" => "hero"}]
+  end
   it "should render properly" do
-    page = Wax::Page.new ["Home", {"hero" => "hero"}]
     renderer = Minitest::Mock.new
     renderer.expect(:render, "<rendered_html>", [Wax::Page])
-    page.render_with(renderer)
+    @page.render_with(renderer)
 
     renderer.verify
+  end
+
+  it "should have a url" do
+    @page.url.must_equal "home"
   end
 end
