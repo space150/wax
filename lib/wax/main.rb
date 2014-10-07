@@ -24,6 +24,5 @@ module Wax
 
       config
     end
-    end
   end
 end
