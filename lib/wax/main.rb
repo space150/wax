@@ -1,5 +1,6 @@
 require "yaml"
 
+require "wax/config"
 require "wax/page"
 require "wax/page_renderer"
 
@@ -8,30 +9,17 @@ module Wax
     attr_reader :config
 
     def initialize(root)
-      @config = read_config(root)
+      @config = Wax::Config.new(root)
 
-      @pages = @config["pages"].map do |page|
+      @pages = @config.pages.map do |page|
         Wax::Page.new(page)
       end
 
       @page_renderer = Wax::PageRenderer.new(
-        template_path: @config["directories"]["templates"],
-        partials_path: @config["directories"]["partials"],
-        data_path: @config["directories"]["data"]
+        template_path: @config.dirs["templates"],
+        partials_path: @config.dirs["partials"],
+        data_path:     @config.dirs["data"]
       )
-    end
-
-    private
-
-    def read_config(dir)
-      config = YAML.load_file(File.join(dir, "Waxfile"))
-      # Set defaults.
-      config["directories"]["data"]  ||= "wax/data"
-      config["directories"]["build"] ||= "wax/build"
-      config["directories"]["templates"] = File.join(dir, config["directories"]["templates"])
-      config["directories"]["data"] = File.join(dir, config["directories"]["data"])
-
-      config
     end
   end
 end
