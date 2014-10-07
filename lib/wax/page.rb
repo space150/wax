@@ -1,3 +1,5 @@
+require "wax/module"
+
 module Wax
   class Page
     attr_reader :name, :modules
@@ -5,7 +7,9 @@ module Wax
     # Does this need a root_dir param?
     def initialize(page)
       @name = page.first
-      @modules = page.last
+      @modules = page.last.map do |template, data|
+        Wax::Module.new(template, data)
+      end
     end
 
     def url
