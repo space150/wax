@@ -1,6 +1,7 @@
 require "yaml"
 
 require "wax/page"
+require "wax/page_renderer"
 
 module Wax
   class Main
@@ -8,11 +9,17 @@ module Wax
 
     def initialize(root)
       @config = read_config(root)
+
       @pages = @config["pages"].map do |page|
         Wax::Page.new(page)
       end
-    end
 
+      @page_renderer = Wax::PageRenderer.new(
+        template_path: @config["directories"]["templates"],
+        partials_path: @config["directories"]["partials"],
+        data_path: @config["directories"]["data"]
+      )
+    end
 
     private
 
@@ -21,6 +28,8 @@ module Wax
       # Set defaults.
       config["directories"]["data"]  ||= "wax/data"
       config["directories"]["build"] ||= "wax/build"
+      config["directories"]["templates"] = File.join(dir, config["directories"]["templates"])
+      config["directories"]["data"] = File.join(dir, config["directories"]["data"])
 
       config
     end
