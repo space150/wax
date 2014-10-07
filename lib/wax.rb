@@ -1,5 +1,7 @@
-require "wax/version"
+# Set up the load path.
+lib = File.expand_path(File.dirname(__FILE__))
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-module Wax
-  # Your code goes here...
-end
+
+require "wax/version"
+require "wax/main"

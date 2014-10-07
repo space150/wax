@@ -1,0 +1,11 @@
+---
+directories:
+  templates: Views
+  partials:  Partials
+  symlink:
+    - public
+    - Ajax
+
+pages:
+  Home:
+    hero: hero
