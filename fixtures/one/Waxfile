@@ -9,3 +9,7 @@ directories:
 pages:
   Home:
     hero: hero
+    section: mock/section_alt
+
+  About:
+    hero: about/hero
