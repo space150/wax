@@ -18,13 +18,21 @@ describe Wax::Main do
 
     # Ensure config has all the directories it needs.
     %w{
-      data
-      build
-      templates
-      partials
-      symlink
+      data build templates partials symlink
     }.each do |dir|
       @wax.config.dirs.must_include dir
+    end
+  end
+
+  it "can build the project" do
+    @wax.build_all
+    [
+      "home/index.html",
+      "about/index.html",
+      "public"
+    ].each do |file|
+      path = "#{@wax.config.dirs['build']}/#{file}"
+      assert File.exists?(path), path
     end
   end
 end

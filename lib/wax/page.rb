@@ -4,7 +4,6 @@ module Wax
   class Page
     attr_reader :name, :modules
 
-    # Does this need a root_dir param?
     def initialize(page)
       @name = page.first
       @modules = page.last.map do |template, data|

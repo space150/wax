@@ -14,7 +14,7 @@ module Wax
         template = File.join(@template_path, mod.template) + ".mustache"
         data     = File.join(@data_path, mod.data) + ".json"
         Mustache.render File.read(template), JSON.parse(File.read(data))
-      end.join("\n")
+      end.join("")
     end
   end
 end

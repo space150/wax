@@ -12,3 +12,6 @@
 *.o
 *.a
 mkmf.log
+
+/fixtures/*/public
+/fixtures/*/wax/build
