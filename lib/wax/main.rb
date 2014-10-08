@@ -18,7 +18,8 @@ module Wax
       @page_renderer = Wax::PageRenderer.new(
         template_path: @config.dirs["templates"],
         partials_path: @config.dirs["partials"],
-        data_path:     @config.dirs["data"]
+        data_path:     @config.dirs["data"],
+        layout:        File.join(root, "wax", "templates", "layout.mustache")
       )
     end
 
