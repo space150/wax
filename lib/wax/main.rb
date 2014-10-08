@@ -37,7 +37,7 @@ module Wax
     end
 
     def clean_build_dir
-      FileUtils.rm_rf @config.paths[:build]
+      FileUtils.rm_rf File.join(@config.paths[:build], "*")
       FileUtils.mkdir_p @config.paths[:build]
     end
 
@@ -59,7 +59,7 @@ module Wax
 
     def create_symlinks
       @config.paths[:symlink].each do |link|
-        FileUtils.ln_s link, @config.paths[:build]
+        FileUtils.ln_s link, @config.paths[:build], force: true
       end
     end
   end
