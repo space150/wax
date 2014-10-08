@@ -27,6 +27,7 @@ describe Wax::Main do
   it "can build the project" do
     @wax.build_all
     [
+      "index.html",
       "home/index.html",
       "about/index.html",
       "public"
