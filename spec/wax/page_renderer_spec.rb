@@ -7,8 +7,8 @@ require "wax/page_renderer"
 describe Wax::PageRenderer do
   before do
     @renderer = Wax::PageRenderer.new(
-      template_path: "fixtures/one/Views",
-      data_path: "fixtures/one/wax/data",
+      templates: "fixtures/one/Views",
+      data: "fixtures/one/wax/data",
       layout: "fixtures/one/wax/templates/layout.mustache"
     )
     @page = Wax::Page.new [

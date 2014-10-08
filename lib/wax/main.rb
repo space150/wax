@@ -12,15 +12,8 @@ module Wax
     def initialize(root)
       @root = root
       @config = Wax::Config.new(@root)
-
       @pages = build_pages
-
-      @page_renderer = Wax::PageRenderer.new(
-        template_path: @config.dirs["templates"],
-        partials_path: @config.dirs["partials"],
-        data_path:     @config.dirs["data"],
-        layout:        File.join(@root, "wax", "templates", "layout.mustache")
-      )
+      @page_renderer = Wax::PageRenderer.new @config.paths
     end
 
     def build_all
@@ -44,29 +37,29 @@ module Wax
     end
 
     def clean_build_dir
-      FileUtils.rm_rf @config.dirs["build"]
-      FileUtils.mkdir_p @config.dirs["build"]
+      FileUtils.rm_rf @config.paths[:build]
+      FileUtils.mkdir_p @config.paths[:build]
     end
 
     def save_page(filename, contents)
-      page_file = File.join(@config.dirs["build"], filename)
+      page_file = File.join(@config.paths[:build], filename)
       FileUtils.mkdir_p(File.dirname(page_file))
       File.open(page_file, "w") { |f| f.write(contents) }
     end
 
     def build_homepage
       Mustache.render(
-        File.read(File.join(@root, "wax", "templates", "layout.mustache")),
+        File.read(@config.paths[:layout]),
         content: Mustache.render(
-          File.read(File.join(@root, "wax", "templates", "index.mustache")),
+          File.read(@config.paths[:index_template]),
           pages: @pages.map { |page| { name: page.name, url: "/#{page.url}/" } }
         )
       )
     end
 
     def create_symlinks
-      @config.dirs["symlink"].each do |link|
-        FileUtils.ln_s link, @config.dirs["build"]
+      @config.paths[:symlink].each do |link|
+        FileUtils.ln_s link, @config.paths[:build]
       end
     end
   end

@@ -1,7 +1,7 @@
 ---
-directories:
+paths:
   templates: Views
-  partials:  Partials
+  partials:  Views/Partials
   symlink:
     - public
 
