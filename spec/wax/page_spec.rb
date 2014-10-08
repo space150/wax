@@ -6,7 +6,7 @@ require "wax/page"
 
 describe Wax::Page do
   before do
-    @page = Wax::Page.new ["Home", {"hero" => "hero"}]
+    @page = Wax::Page.new ["Home", { "hero" => "hero" }]
   end
   it "should render properly" do
     renderer = Minitest::Mock.new

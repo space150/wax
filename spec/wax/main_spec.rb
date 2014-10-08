@@ -21,7 +21,7 @@ describe Wax::Main do
       "public"
     ].each do |file|
       path = "#{@wax.config.paths[:build]}/#{file}"
-      assert File.exists?(path), path
+      assert File.exist?(path), path
     end
   end
 end
