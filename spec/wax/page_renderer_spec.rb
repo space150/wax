@@ -13,10 +13,11 @@ describe Wax::PageRenderer do
     )
     @page = Wax::Page.new [
       "Home",
-      {
-        "hero" => "hero",
-        "section" => "mock/section_alt"
-      }
+      [
+        { "hero" => "hero" },
+        { "section" => "section" },
+        { "section" => "mock/section_alt" }
+      ]
     ]
   end
 
@@ -27,8 +28,9 @@ describe Wax::PageRenderer do
     output.must_match "Wax Fixture One"
     # In the "hero" template:
     output.must_match "Hello from the JSON"
-    # In the "section" template:
-    output.must_match "I'm just a section"
+    # In the "section" templates:
+    output.must_match "I&#39;m just a section"
+    output.must_match "I&#39;m an alternate section"
   end
 
   it "works the same way through Page#render_with" do

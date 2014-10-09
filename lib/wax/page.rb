@@ -6,8 +6,8 @@ module Wax
 
     def initialize(page)
       @name = page.first
-      @modules = page.last.map do |template, data|
-        Wax::Module.new(template, data)
+      @modules = page.last.map do |mod|
+        Wax::Module.new(mod.keys.first, mod.values.first)
       end
     end
 

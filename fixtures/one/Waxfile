@@ -1,14 +1,13 @@
 ---
 paths:
-  templates: Views
-  partials:  Views/Partials
   symlink:
     - public
 
 pages:
   Home:
-    hero: hero
-    section: mock/section_alt
+  - hero: hero
+  - section: section
+  - section: mock/section_alt
 
   About:
-    hero: about/hero
+  - hero: about/hero
