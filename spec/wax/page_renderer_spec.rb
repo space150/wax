@@ -1,25 +1,16 @@
 require "minitest/spec"
 require "minitest/autorun"
 
+require "wax/config"
 require "wax/page"
 require "wax/page_renderer"
 
 describe Wax::PageRenderer do
   before do
-    @renderer = Wax::PageRenderer.new(
-      templates: "fixtures/one/Views",
-      partials: "fixtures/one/Views/Partials",
-      data: "fixtures/one/wax/data",
-      layout: "fixtures/one/wax/templates/layout.mustache"
-    )
-    @page = Wax::Page.new [
-      "Home",
-      [
-        { "hero" => "hero" },
-        { "section" => "section" },
-        { "section" => "mock/section_alt" }
-      ]
-    ]
+    root = File.join(Dir.pwd, "fixtures", "one")
+    config = Wax::Config.new(root)
+    @renderer = Wax::PageRenderer.new(config.paths)
+    @page = Wax::Page.new config.pages.first
   end
 
   it "should render things properly" do

@@ -12,7 +12,7 @@ module Wax
       puts "-> Rendering page: #{page.name}"
       Mustache.render(
         File.read(@paths[:layout]),
-        content: render_modules(page.modules)
+        render_containers(page.containers)
       )
     rescue => e
       puts "Error rendering page: #{e}"
@@ -21,11 +21,17 @@ module Wax
 
     private
 
+    def render_containers(containers)
+      containers.each_with_object({}) do |container, obj|
+        obj[container.name] = render_modules(container.modules)
+      end
+    end
+
     def render_modules(modules)
       modules.map do |mod|
-        template = get_template mod.template
-        data     = get_data mod.data
-        Mustache.render template, data
+        template = get_template(mod.template)
+        data     = get_data(mod.data)
+        Mustache.render(template, data)
       end.join("")
     end
 

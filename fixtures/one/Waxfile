@@ -3,11 +3,15 @@ paths:
   symlink:
     - public
 
+
 pages:
   Home:
-  - hero: hero
-  - section: section
-  - section: mock/section_alt
+    content:
+    - hero: hero
+    - section: section
+    content2:
+    - section: mock/section_alt
 
   About:
-  - hero: about/hero
+    content:
+    - hero: about/hero
