@@ -8,6 +8,7 @@ describe Wax::PageRenderer do
   before do
     @renderer = Wax::PageRenderer.new(
       templates: "fixtures/one/Views",
+      partials: "fixtures/one/Views/Partials",
       data: "fixtures/one/wax/data",
       layout: "fixtures/one/wax/templates/layout.mustache"
     )
@@ -31,6 +32,8 @@ describe Wax::PageRenderer do
     # In the "section" templates:
     output.must_match "I&#39;m just a section"
     output.must_match "I&#39;m an alternate section"
+    # In the partial:
+    output.must_match "I'm a partial"
   end
 
   it "works the same way through Page#render_with" do

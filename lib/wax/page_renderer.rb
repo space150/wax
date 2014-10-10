@@ -5,6 +5,7 @@ module Wax
   class PageRenderer
     def initialize(paths)
       @paths = paths
+      Mustache.template_path = @paths[:partials]
     end
 
     def render(page)
