@@ -1,0 +1,37 @@
+<div class="pagination text-center">
+  {{#heading}}
+    <h3 class="h5 pagination__heading">{{heading}}</h3>
+  {{/heading}}
+  <ul class="h-list pagination__list">
+    {{^is_first_page}}
+    <li class="pagination__item">
+      <a href="{{first_page_url}}" data-pagination-number="{{first_page_url}}">&larr; First</a>
+    </li>
+    {{/is_first_page}}
+
+    {{#more_results_below}}
+    <li class="pagination__item">&#8230;</li>
+    {{/more_results_below}}
+
+    {{#pagination_links}}
+    <li class="pagination__item">
+      {{#is_active}}
+      <strong data-pagination-current-page data-pagination-number="{{page_number}}">{{page_number}}</strong>
+      {{/is_active}}
+      {{^is_active}}
+      <a href="{{page_url}}" data-pagination-number="{{page_number}}">{{page_number}}</a>
+      {{/is_active}}
+    </li>
+    {{/pagination_links}}
+
+    {{#more_results_above}}
+    <li class="pagination__item">&#8230;</li>
+    {{/more_results_above}}
+
+    {{^is_last_page}}
+    <li class="pagination__item">
+      <a href="{{last_page_url}}" data-pagination-number="{{last_page_url}}">Last &rarr;</a>
+    </li>
+    {{/is_last_page}}
+  </ul>
+</div><!-- end .pagination -->

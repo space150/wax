@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "browserify": "^4.2.1",
+    "coffeeify": "0.5.2",
+    "docco": "^0.6.3",
+    "mustache": "0.8.1",
+    "stripify": "^1.2.0",
+    "uglifyify": "1.0.1",
+    "watchify": "^1.0.2"
+  }
+}

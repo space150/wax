@@ -1,0 +1,15 @@
+﻿{
+  "espanol_url": "http://www.google.com/",
+  "newsletter_url": "http://www.google.com/",
+  "visit_playground_url": "/en/visit-a-playground",
+  "contact_us_url": "/en/contact-us",
+  "search_url": "",
+  "playground_url": "/en/playgounds",
+  "playgrounds_active": false,
+  "inspiration_url": "/en/inspiration-landing",
+  "inspiration_active": false,
+  "tools_url": "~/link/551fc32d891a4dc39706520411e943fd.aspx",
+  "tools_active": false,
+  "story_url": "/en/generic-test/sub-generic",
+  "story_active": false
+}

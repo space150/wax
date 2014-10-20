@@ -1,0 +1,23 @@
+---
+paths:
+  symlink:
+    - "Ajax"
+    - "docs"
+    - "public"
+
+page_ref: &page
+  header:
+    - Shared/Header: Header
+  footer:
+    - Shared/Footer: Footer
+
+pages:
+  Styleguide:
+    <<: *page
+    content:
+      - Generic/Styleguide: mock/Styleguide
+
+  Module-Guide:
+    <<: *page
+    content:
+      - Generic/hero: mock/hero

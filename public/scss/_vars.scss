@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+// Include CSS Reset or normalize?
+$reset: false;
+$normalize: true;
+
+// Include push/pull styles?
+$push: true;
+$pull: true;
+
+// Include responsive grid widths w/breakpoint namespace?
+$responsive: true;
+$responsive-push-pull: false;
+
+// Base measurements
+$base-font-size:         15px;
+$base-line-height:       25px;
+$base-font-size--mobile: $base-font-size;
+// Set to px value if mobile requires different font size
+
+// Calculated measurements
+$line-height-ratio: $base-line-height / $base-font-size;
+$base-spacing-unit: $line-height-ratio;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+// Grid
+$gutter: $base-spacing-unit;
+
+// Layout
+$site-min-width:          320px;
+$site-wrapper-max-width:  1440px;
+
+// Breakpoints
+// Set to false to exclude breakpoints
+$hand-start:   480px;
+$lap-start:    768px;
+$desk-start:   1024px;
+$wall-start:   1200px;
+
+// Colors
+$black:        #000;
+$grayDark:     #4c4c4c;
+$gray:         #999;
+$grayLight:    #f0f0f0;
+$white:        #fff;
+
+$primary:      #203c7b; // dark blue
+$secondary:    #0084cb; // light blue
+$tertiary:     #4f2683; // purple
+$quaternary:   #fff5a9; // yellow
+// quinary, senary, septenary, octonary, nonary, denary
+
+// Form validation colors
+$state-success:  #468847;
+$state-error:    #b94a48;
+
+// Fonts
+$font-body: Georgia, Times, "Times New Roman", serif;
+
+// Examples for custom @font-face (see _fonts.scss for declaration)
+// $font-body:    "PatuaOne", Georgia, Times, "Times New Roman", serif;
+// $font-accent:  "Lobster", "Arial Black", "Arial Bold", sans-serif;
+// $font-small:   "Aller", Arial, Helvetica, sans-serif;

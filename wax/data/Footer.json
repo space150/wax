@@ -1,0 +1,145 @@
+﻿{
+  "upper_columns": [
+    {
+      "column_number": 1,
+      "column_header_text": "Our Company",
+      "column_header_url": "http://www.google.com/",
+      "column_links": [
+        {
+          "link_url": "/en/faqs",
+          "link_text": "FAQs"
+        },
+        {
+          "link_url": "http://www.dairyqueen.com/us-en/Menu/Treats/Pineapple-Sundae/",
+          "link_text": "Job Opportunities"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Community Outreach"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Become a Consultant"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Certifications & Standards"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Partnerships & Memberships"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Contracts & Preferred Vendors"
+        }
+      ]
+    },
+    {
+      "column_number": 2,
+      "column_header_text": "Playground Education",
+      "column_header_url": "http://www.google.com/",
+      "column_links": [
+        {
+          "link_url": "http://www.horsch.com/",
+          "link_text": "Expert Speaker"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Landscape Structure Facilities Tour"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Safety & Maintenance"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Designing Natural Play"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Fitness Focused Playgrounds"
+        }
+      ]
+    },
+    {
+      "column_number": 3,
+      "column_header_text": "Inclusive Play",
+      "column_header_url": "http://www.google.com/",
+      "column_links": [
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Play for Life Symposium"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Inclusive Play Partnerships"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Resources"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Beyond Accessibility"
+        }
+      ]
+    },
+    {
+      "column_number": 4,
+      "column_header_text": "News & Events",
+      "column_header_url": "/en/news",
+      "column_links": [
+        {
+          "link_url": "/en/news",
+          "link_text": "What's New"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Upcoming Events"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Media Room"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Awards"
+        },
+        {
+          "link_url": "http://www.google.com/",
+          "link_text": "Playground Industry News"
+        }
+      ]
+    }
+  ],
+  "lower_links": [
+    {
+      "link_url": "http://www.google.com/",
+      "link_text": "Privacy"
+    },
+    {
+      "link_url": "http://www.google.com/",
+      "link_text": "Sitemap"
+    },
+    {
+      "link_url": "http://www.google.com/",
+      "link_text": "US Voluntary Product Recalls"
+    },
+    {
+      "link_url": "http://www.google.com/",
+      "link_text": "View Catalog"
+    },
+    {
+      "link_url": "http://www.google.com/",
+      "link_text": "Inspirations App"
+    }
+  ],
+  "social_facebook_url": "https://www.facebook.com/PlayLSI",
+  "social_twitter_url": "https://twitter.com/PlayLSI",
+  "social_instagram_url": "https://www.youtube.com/user/PlayLSI",
+  "social_youtube_url": "https://www.youtube.com/user/PlayLSI",
+  "social_pinterest_url": "http://www.pinterest.com/playlsi/",
+  "social_linkedin_url": "https://www.linkedin.com/company/landscape-structures",
+  "social_googleplus_url": "https://plus.google.com/+Playlsi/posts"
+}
