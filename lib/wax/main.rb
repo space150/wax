@@ -61,6 +61,9 @@ module Wax
       @config.paths[:symlink].each do |link|
         FileUtils.ln_s link, @config.paths[:build], force: true
       end
+
+    rescue
+      puts "Error creating symlinks!"
     end
   end
 end
