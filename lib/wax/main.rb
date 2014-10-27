@@ -62,7 +62,7 @@ module Wax
         FileUtils.ln_s link, @config.paths[:build], force: true
       end
 
-    rescue
+    rescue NotImplementedError => e
       puts "Error creating symlinks!"
     end
   end
