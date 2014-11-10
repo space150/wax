@@ -15,3 +15,4 @@ mkmf.log
 
 /fixtures/*/public
 /fixtures/*/wax/build
+/fixtures/one/wax/data/wax_pages.json

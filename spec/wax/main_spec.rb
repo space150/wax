@@ -15,7 +15,6 @@ describe Wax::Main do
   it "can build the project" do
     @wax.build_all
     [
-      "index.html",
       "home/index.html",
       "about/index.html",
       "public"
@@ -23,5 +22,6 @@ describe Wax::Main do
       path = "#{@wax.config.paths[:build]}/#{file}"
       assert File.exist?(path), path
     end
+    assert File.exist?("#{@wax.config.paths[:data]}/wax_pages.json")
   end
 end

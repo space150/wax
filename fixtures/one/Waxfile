@@ -5,6 +5,10 @@ paths:
 
 
 pages:
+  /:
+    content:
+    - wax/index: wax_pages
+
   Home:
     content:
     - hero: hero
