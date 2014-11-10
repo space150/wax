@@ -10,7 +10,7 @@ describe Wax::PageRenderer do
     root = File.join(Dir.pwd, "fixtures", "one")
     config = Wax::Config.new(root)
     @renderer = Wax::PageRenderer.new(config.paths)
-    @page = Wax::Page.new config.pages.first
+    @page = Wax::Page.new ["Home", config.pages["Home"]]
   end
 
   it "should render things properly" do

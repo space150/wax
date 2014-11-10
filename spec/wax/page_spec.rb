@@ -26,6 +26,6 @@ describe Wax::Page do
   end
 
   it "should have a url" do
-    @page.url.must_equal "home"
+    @page.url.must_equal "/"
   end
 end

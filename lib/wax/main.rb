@@ -13,6 +13,7 @@ module Wax
       @root = root
       @config = Wax::Config.new(@root)
       @pages = build_pages
+      File.write(@config.paths[:data] + "/wax_pages.json", get_pages_json)
       @page_renderer = Wax::PageRenderer.new @config.paths
     end
 
@@ -24,7 +25,6 @@ module Wax
           page.render_with(@page_renderer)
         )
       end
-      save_page "index.html", build_homepage
       create_symlinks
     end
 
@@ -47,14 +47,12 @@ module Wax
       File.open(page_file, "w") { |f| f.write(contents) }
     end
 
-    def build_homepage
-      Mustache.render(
-        File.read(@config.paths[:layout]),
-        content: Mustache.render(
-          File.read(@config.paths[:index_template]),
-          pages: @pages.map { |page| { name: page.name, url: "/#{page.url}/" } }
-        )
-      )
+    def get_pages_json
+      {
+        pages: @pages.map do |page|
+          { name: page.name, url: "/#{page.url}/" }
+        end
+      }.to_json
     end
 
     def create_symlinks
@@ -62,7 +60,7 @@ module Wax
         FileUtils.ln_s link, @config.paths[:build], force: true
       end
 
-    rescue NotImplementedError => e
+    rescue NotImplementedError
       puts "Error creating symlinks!"
     end
   end

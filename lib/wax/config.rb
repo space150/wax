@@ -31,8 +31,7 @@ module Wax
         build: "wax/build",
         templates: "Views",
         partials: "Views/Partials",
-        layout: "wax/templates/layout.mustache",
-        index_template: "wax/templates/index.mustache",
+        layout: "Views/wax/layout.mustache",
         symlink: []
       }
     end
