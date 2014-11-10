@@ -15,7 +15,7 @@ module Wax
     end
 
     def url
-      @name.downcase
+      @name.downcase.gsub(" ", "_")
     end
 
     def render_with(renderer)
