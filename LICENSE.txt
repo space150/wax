@@ -1,4 +1,4 @@
-Copyright (c) 2014 Mike Anderson
+Copyright (c) 2014 Mike Anderson, space150
 
 MIT License
 

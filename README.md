@@ -2,16 +2,11 @@
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Run
 
-```ruby
-gem 'wax'
+```sh
+$ npm install wax
 ```
-
-And then execute:
-
-    $ bundle
-
 
 ## Usage
 
