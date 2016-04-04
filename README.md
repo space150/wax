@@ -5,7 +5,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'wax'
+gem "wax", git: "git://github.com/space150/wax"
 ```
 
 And then execute:
